@@ -84,7 +84,7 @@ def abs_files(root, files):
     return map(join, files)
 
 async def upload_files(client, reply, filepaths, zippath):
-    if not STATUS.UPLOAD_AS_ZIP:
+    if STATUS.UPLOAD_AS_ZIP:
         for filepath in filepaths:
             await upload_to_tg_handler.func(
                 filepath,
